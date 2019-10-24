@@ -5,7 +5,7 @@ const fetchBreedDescription = (breed, callback) => {
       callback(`error while fecthing details: ${error}`, null);
     }
     const data = JSON.parse(body);
-    const desc = data[0].description;
+    const desc = data[0].description.trim();
     if (desc) {
       callback(null, desc);
     } else {
